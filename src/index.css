@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Reseteo básico para que el diseño ocupe todo el ancho */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light; /* Forzamos modo claro para que se vea como Kemik */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6; /* El gris claro que querías */
+  color: #1a1a1a;
+  min-height: 100vh;
+  width: 100%;
+  display: block; /* Eliminamos el flex-center que arruinaba todo */
+}
+
+/* Quitamos los estilos de botones por defecto de Vite que ensucian tu Header */
+button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+@keyframes shimmer {
+  100% {
+    left: 150%;
+  }
+}
+
+.group:hover .group-hover\:animate-shimmer {
+  animation: shimmer 1s infinite;
+}
